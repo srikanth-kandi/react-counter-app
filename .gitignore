@@ -108,6 +108,8 @@ dist
 /node_modules
 /.pnp
 .pnp.js
+.vscode/
+.devcontainer/
 
 # testing
 /coverage
