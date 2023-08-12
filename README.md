@@ -1,78 +1,109 @@
-# GitHub Codespaces ♥️ React
+# Counter Application using ReactJS ⚛️
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikanth-kandi.github.io/react-counter-app/)
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+<h3 id="executing-local">Executing on Local Machine</h3>
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+<details>
+<summary><b>Steps to Run on your Local Machine</b></summary>
 
-This project was bootstrapped for you with [Create React App](https://github.com/facebook/create-react-app).
+<blockquote>
 
-## Available Scripts
+<details>
+<summary><b>Requirements</b></summary>
 
-In the project directory, you can run:
+- Install NodeJS from [https://nodejs.org/en/download](https://nodejs.org/en/download)
+- Install `Git` from [https://git-scm.com/downloads](https://git-scm.com/downloads)
+</details>
 
-### `npm start`
+<blockquote>
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+1. Cloning this repository
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
+    ```bash
+    git clone https://github.com/srikanth-kandi/react-counter-app
+    ```
 
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
+2. Move to the cloned directory
 
-### `npm test`
+    ```bash
+    cd react-counter-app
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Installing the dependencies of this project
 
-### `npm run build`
+    ```bash
+    npm install
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. Starting the development server
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    npm start
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. If everything works fine you can see the output at [http://localhost:3000/react-counter-app](http://localhost:3000/react-counter-app)
 
-### `npm run eject`
+6. Check details of implementation [here](#details-implementation)
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h3 id="details-implementation">Details of Implementation</h3>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Implemented using the [ES6 Class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```jsx
+import { Component } from 'react'
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+class Counter extends Component {
+    ...
+}
+```
 
-## Learn More
+_As we are extending the `Component` class all the pre-defined methods and objects will be [Inherited](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)) to the `Counter` class so we can easily implement new functionality to the `Counter` component._
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+So to define a new component we need to create a folder under the `src/` as `src/components`, under this directory we will store our new components.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Now, we need to create the `Counter` component under the path `src/components/Counter`
 
-### Code Splitting
+_NOTE: In ReactJS all the Components we create must be started with an Uppercase Alphabet_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Under the `src/components/Counter` we create two files `index.js` and `index.css` which holds the functionality and design part of the `Counter` component.
 
-### Analyzing the Bundle Size
+In the `index.js` file, we create `Counter` class extends the `Component` class and linking the `index.css` to `Counter` component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The `render()` is a method Inherited from `Component` class which is crucial for rendering the `JSX` elements to `<html>` elements.
 
-### Making a Progressive Web App
+```jsx
+import { Component } from 'react'
+import './index.css'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+class Counter extends Component {
+    render() {
+        return (
+            <div className="container">
+                <h1 className="heading">Counter</h1>
+                <p className="count">0</p>
+                <div>
+                    <button className="button">Decrease 🔽</button>
+                    <button className="button">Increase 🔼</button>
+                </div>
+            </div>
+        )
+    }
+}
 
-### Advanced Configuration
+export default Counter
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Now, importing the `Counter` component to `src/App.js` file for displaying on Homepage.
 
-### Deployment
+```jsx
+import Counter from './components/Counter'
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+const App = () => {
+    return <Counter />
+}
+export default App
+```
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To see the output on your Local machine follow [Executing on Local Machine](#executing-local) section
