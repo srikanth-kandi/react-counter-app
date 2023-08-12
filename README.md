@@ -54,19 +54,19 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
 
 - Visit [this](https://youtu.be/7wzuievFjrk) video for reference
 
-- Install `gh-pages` package
+- Install the `gh-pages` package
 
     ```bash
     npm install gh-pages --save-dev
     ```
 
-- Add `homepage` to `package.json` file
+- Add `homepage` to the `package.json` file
 
     ```json
     "homepage": "https://<your-username>.github.io/<your-repository-name>"
     ```
 
-- Add `predeploy` and `deploy` scripts to `package.json` file
+- Add `predeploy` and `deploy` scripts to the `package.json` file
 
     ```json
     "scripts": {
@@ -81,7 +81,7 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
     npm run deploy
     ```
 
-- After successful execution of above command you can see the deployed application at [https://\<your-username>.github.io/\<your-repository-name>](https://<username>.github.io/<repository-name>) and `gh-pages` branch will be created in your repository.
+- After successful execution of the above command you can see the deployed application at [https://\<your-username>.github.io/\<your-repository-name>](https://<username>.github.io/<repository-name>) and `gh-pages` branch will be created in your repository.
 </details>
 
 </blockquote>
@@ -107,11 +107,11 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
 
     _NOTE: In ReactJS all the Components we create must be started with an Uppercase Alphabet_
 
-4. Under the `src/components/Counter` we create two files `index.js` and `index.css` which holds the functionality and design part of the `Counter` component.
+4. Under the `src/components/Counter` we create two files `index.js` and `index.css` which hold the functionality and design part of the `Counter` component.
 
-    In the `index.js` file, we create `Counter` class extends the `Component` class and linking the `index.css` to `Counter` component.
+    In the `index.js` file, we create the `Counter` class extends the `Component` class, and link the `index.css` to the `Counter` component.
 
-5. `render()` is a method Inherited from `Component` class which is crucial for rendering the `JSX` elements to `<html>` elements.
+5. `render()` is a method Inherited from the `Component` class which is crucial for rendering the `JSX` elements to `<html>` elements.
 
     ```jsx
     import { Component } from 'react'
@@ -137,7 +137,7 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
     export default Counter
     ```
 
-    Now, importing the `Counter` component to `src/App.js` file for displaying on Homepage.
+    Now, import the `Counter` component to the `src/App.js` file for displaying on Homepage.
 
     ```jsx
     import Counter from './components/Counter'
@@ -150,7 +150,7 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
 
     To see the output on your Local machine follow [Executing on Local Machine 💻](#executing-on-local-machine) section
 
-6. But we developed the static app till now, to make it dynamic we need to use `state` object which is Inherited from `Component` class.
+6. But we developed the static app till now, to make it dynamic we need to use the `state` object which is Inherited from the `Component` class.
 
     ```jsx
     class Counter extends Component {
@@ -160,9 +160,9 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
     }
     ```
 
-    _NOTE: `state` object is used to store the data which is frequently updated during the runtime of application._
+    _NOTE: `state` object is used to store the data which is frequently updated during the runtime of the application._
 
-7. Now, we need to display the `count` value in the `<p>` tag, so we need to use `JSX` syntax to display the `count` value.
+7. Now, we need to display the `count` value in the `<p>` tag, so we need to use the `JSX` syntax to display the `count` value.
 
     ```jsx
     class Counter extends Component {
@@ -187,9 +187,9 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
     }
     ```
 
-    _NOTE: [this](https://en.wikipedia.org/wiki/This_(computer_programming)) is a keyword in Object Oriented Programming refer to the object, class, or other entity of which the currently running code._
+    _NOTE: [this](https://en.wikipedia.org/wiki/This_(computer_programming)) is a keyword in Object Oriented Programming that refer to the object, class, or other entity of which the currently running code._
 
-8. Now, we need to implement the functionality of `Increase 🔼` and `Decrease 🔽` buttons, so we need to add `onClick` event to the buttons.
+8. Now, we need to implement the functionality of the `Increase 🔼` and `Decrease 🔽` buttons, so we need to add the `onClick` event to the buttons.
 
     ```jsx
     class Counter extends Component {
@@ -216,9 +216,9 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
 
     _NOTE: `onClick` is a [Event Handler](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Event_handlers) which is used to handle the click event on the element._
 
-9. Now, we need to implement the `onIncrement()` and `onDecrement()` methods to increase and decrease the `count` value using the `setState()` method which is Inherited from `Component` class.
+9. Now, we need to implement the `onIncrement()` and `onDecrement()` methods to increase and decrease the `count` value using the `setState()` method which is Inherited from the `Component` class.
 
-    `setState()` method takes `prevState` object as an argument and returns the updated `state` object.
+    The `setState()` method takes the `prevState` object as an argument and returns the updated `state` object.
 
     ```jsx
     class Counter extends Component {
@@ -255,6 +255,6 @@ Live demo - [https://srikanth-kandi.github.io/react-counter-app/](https://srikan
     export default Counter
     ```
 
-    _NOTE: `setState()` is a method which is used to update the `state` object of the component._
+    _NOTE: `setState()` is a method that is used to update the `state` object of the component._
 
-10. Now, we can see the `count` is updating by clicking on `Increase 🔼` and `Decrease 🔽` buttons. See the output on the browser by following [Executing on Local Machine 💻](#executing-on-local-machine) section.
+10. Now, we can see the `count` is updating by clicking on the `Increase 🔼` and `Decrease 🔽` buttons. See the output on the browser by following the [Executing on Local Machine 💻](#executing-on-local-machine) section.
